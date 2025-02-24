@@ -1,3 +1,4 @@
+A continuacion vamos a ver como crear una impresora virtual a la cual cuando le enviamos cualquier archivo para su impresion lo deja en la cola para asi poder comprobar mas adelante que este archivo ha sido enviado.
 El script `slow_printer.sh` debe colocarse en una ubicación accesible y configurarse como el "backend" de la impresora virtual en CUPS. Esto significa que CUPS usará este script para procesar los trabajos de impresión enviados a la impresora virtual. Aquí te explico cómo hacerlo paso a paso:
 
 ---
@@ -19,7 +20,7 @@ Guarda este archivo en una ubicación adecuada, como `/usr/local/bin/slow_printe
 
 ---
 
-### 2. **Hacer que el script sea ejecutable**
+### 1.2. **Hacer que el script sea ejecutable**
 
 Asegúrate de que el script tenga permisos de ejecución. Ejecuta el siguiente comando:
 
@@ -29,7 +30,7 @@ sudo chmod +x /usr/local/bin/slow_printer.sh
 
 ---
 
-### 3. **Configurar la impresora virtual en CUPS**
+### 1.3. **Configurar la impresora virtual en CUPS**
 
 Ahora, configura una impresora virtual en CUPS que use este script como backend. Sigue estos pasos:
 
@@ -54,7 +55,7 @@ Ahora, configura una impresora virtual en CUPS que use este script como backend.
 
 ---
 
-### 4. **Probar la impresora virtual**
+### 1.4. **Probar la impresora virtual**
 
 Ahora que la impresora virtual está configurada, puedes probarla enviando trabajos de impresión y verificando que el script `slow_printer.sh` funcione correctamente.
 
@@ -75,7 +76,7 @@ Ahora que la impresora virtual está configurada, puedes probarla enviando traba
 
 ---
 
-### 5. **Integrar con el script de Python**
+### 1.5. **Integrar con el script de Python**
 
 Si estás usando el script de Python para gestionar la impresión, puedes enviar trabajos a la impresora virtual (`VirtualPrinter`) y usar la función `list_jobs` para verificar que los trabajos aparecen en la cola de impresión.
 
@@ -123,7 +124,7 @@ Si prefieres usar un filtro personalizado (como el script `slow_printer.sh`), de
 
 ---
 
-### 3. **Probar la impresión de archivos JPEG**
+### 2.1. **Probar la impresión de archivos JPEG**
 
 Después de configurar la impresora virtual para manejar archivos JPEG, prueba enviar un archivo JPEG nuevamente:
 
@@ -135,7 +136,7 @@ Si la configuración es correcta, el archivo JPEG se procesará correctamente y 
 
 ---
 
-### 4. **Verificar la cola de impresión**
+### 2.2. **Verificar la cola de impresión**
 
 Usa el comando `lpstat -o` para verificar que el trabajo de impresión está en la cola:
 
